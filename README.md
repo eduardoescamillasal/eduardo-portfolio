@@ -28,3 +28,4 @@ A placeholder is used now because no portrait image was supplied.
 ## CV
 
 `public/Eduardo_Escamilla_CV.docx` is Eduardo's current CV. All CV links on the portfolio are direct downloads. The previous public/private CV builder has been removed from this site so it can live as a separate project.
+
