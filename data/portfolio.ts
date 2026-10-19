@@ -1,0 +1,35 @@
+export const skills = [
+  'React','Next.js','React Native','Node.js','Express','Python','SQL','Supabase',
+  'AWS','Google Cloud','Azure','Docker','Linux','n8n','Gemini','Claude'
+];
+
+export const projects = [
+  {
+    eyebrow: 'LOGIC · MATHEMATICS · STEM',
+    title: 'ProofGym',
+    subtitle: 'Logic & STEM Problem-Solving Platform',
+    description: 'An interactive environment for practicing formal reasoning and quantitative problem solving. It includes a Fitch-style proof trainer with step-by-step validation and a broader arena spanning mathematics, physics, chemistry, and logic.',
+    tags: ['Formal logic','Fitch proofs','Problem solving','Learning systems'],
+    href: 'https://proof-gym.vercel.app/',
+    mark: '⊢'
+  },
+  {
+    eyebrow: 'COGNITION · SOFTWARE · TRAINING',
+    title: 'KickboxWM',
+    subtitle: 'Cognitive & Physical Training Application',
+    description: 'An experimental application combining configurable working-memory tasks with movement and HIIT sessions, including independent memory streams, audio cues, bilingual announcements, timing controls, and performance tracking.',
+    tags: ['Working memory','HIIT','Interactive systems','Experimentation'],
+    href: 'https://kickboxer-pfc-optimizer.vercel.app/',
+    mark: 'N↟'
+  }
+];
+
+export const experience = [
+  { period:'2025 — now', company:'Q Bridge AI', role:'Full Stack Software Developer / Head of Solutions', text:'Full-stack applications and dashboards with React, Next.js, Node.js, Express, Python, SQL and Supabase. LLM workflow prototypes with n8n, Gemini and Claude. Application deployment and troubleshooting across AWS, Google Cloud, Docker and Vercel.' },
+  { period:'2024', company:'Avant Santé', role:'Full Stack Software Developer', text:'Developed web applications across front end, back end, databases and API integrations using React, Python, Node.js and SQL.' },
+  { period:'2021 — 2024', company:'The Blue People', role:'Full Stack Software Developer', text:'Production React Native mobile applications, React administration tools and serverless systems using AWS and Azure. Work included authentication, real-time messaging, media, geolocation and analytics.' },
+  { period:'2018 — 2021', company:'Independent', role:'Software Developer & STEM Tutor', text:'Custom .NET solutions and mentoring in mathematics, physics, programming and mathematical modeling.' },
+  { period:'2017 — 2018', company:'Interfactura Grupo GDX', role:'Software Developer', text:'Python/data work, web development, CRUD applications, Linux, Docker and Git.' },
+  { period:'2013 — 2014', company:'KXK Global', role:'Financial Modeling', text:'Quantitative risk models and stochastic simulations in R for financial and project risk.' },
+  { period:'2008 — 2009', company:'University of Texas–Pan American', role:'Game Theory Research Assistant', text:'Worked with game-theoretic models related to seller competition, auctions and mechanism design.' }
+];
