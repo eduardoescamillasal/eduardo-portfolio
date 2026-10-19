@@ -88,10 +88,9 @@ export default function Home() {
 
           <p className="lede">
             I’m Eduardo Escamilla. I build web and mobile products with React,
-            Next.js, React Native, Node.js and Python, and I’m particularlygit
-            remote -v comfortable with greenfield development. My background
-            also includes mathematics, quantitative modeling and machine
-            learning.
+            Next.js, React Native, Node.js and Python, and I’m particularly
+            comfortable with greenfield development. My background also includes
+            mathematics, quantitative modeling and machine learning.
           </p>
 
           <div className="actions">
