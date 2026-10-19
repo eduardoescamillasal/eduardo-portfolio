@@ -274,9 +274,8 @@ export default function Home() {
             <div>
               <p className="kicker">CONTEXT</p>
               <p>
-                Part of my work at The Blue People on a production React Native
-                application, React administrative system and AWS-backed
-                services.
+                Part of my work on a production React Native application, React
+                administrative system and AWS-backed services.
               </p>
             </div>
             <div>
