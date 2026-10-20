@@ -440,7 +440,7 @@ export default function Home() {
 
       <section id="contact" className="contact shell">
         <p className="kicker">CONTACT</p>
-        <h2>Looking for someone who can build from the beginning?</h2>
+        <h2>Looking for someone who can build from scratch?</h2>
         <a className="mail" href="mailto:eduardo.escamillasal@gmail.com">
           eduardo.escamillasal@gmail.com <Arrow />
         </a>
