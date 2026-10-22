@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { siteUrl, siteDescription, shareImage } from "../lib/site";
 import { ProjectPreview } from "./components/project-preview";
+import { CodewarsProfile } from "./components/codewars-profile";
 import { ThemeToggle } from "./components/theme-toggle";
 import { ContactForm, Certificates } from "./components/interactive";
 import { experience } from "../data/portfolio";
@@ -454,7 +455,7 @@ export default function Home() {
         <p className="kicker">HOW I WORK</p>
         <div>
           <h2>Curiosity, practice, and honest work.</h2>
-          <p>I use AI as part of my workflow. This portfolio is a place to share the things I love building, problems I’ve tackled, and ideas I’m still learning. I want the work—and the decisions I can explain—to speak for itself.</p>
+          <p>I use AI as part of my workflow. This portfolio is a place to share the things I love building, problems I’ve tackled, and ideas I’m still learning. The projects here show what I’ve built and how I approach problems.</p>
           <details><summary>A little more about me</summary><p>My interests connect mathematics, formal reasoning, software, and learning. ProofGym and KickboxWM explore different sides of that curiosity: practicing rigorous thinking and experimenting with interactive training.</p></details>
         </div>
       </section>
@@ -467,13 +468,7 @@ export default function Home() {
         </a>
         <ContactForm />
         <div className="footer-links">
-          <a
-            href="https://www.codewars.com/users/jlsomnifero"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Codewars <Arrow />
-          </a>
+          <CodewarsProfile />
           <a
             href="https://github.com/eduardoescamillasal"
             target="_blank"
