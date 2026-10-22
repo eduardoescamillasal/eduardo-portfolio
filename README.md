@@ -26,3 +26,7 @@ Add real credentials to `data/certificates.ts` with title, platform, issuer, cre
 - Supply any additional personal content and an optional PDF CV for browser preview.
 
 Changes are local. Existing Vercel configuration is preserved.
+
+## Interactive visual polish
+
+The hero includes an original canvas particle wave that reacts to fine-pointer movement. Colors follow the selected theme. Animation is capped at 30 FPS, uses fewer particles on small screens, stops offscreen and in background tabs, and becomes static for reduced-motion preferences. A subtle “Pause motion” control also lets visitors stop it. Buttons, links, certificate cards, and form controls have hover, focus, and press feedback; motion effects respect reduced-motion settings.

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Arrow } from "./components/arrow";
 import type { Metadata } from "next";
 import { siteUrl, siteDescription, shareImage } from "../lib/site";
+import { ParticleWave } from "./components/particle-wave";
 import { ProjectPreview } from "./components/project-preview";
 import { CodewarsProfile } from "./components/codewars-profile";
 import { ThemeToggle } from "./components/theme-toggle";
@@ -53,6 +54,8 @@ export default function Home() {
         </div>
       </nav>
 
+      <div className="hero-stage">
+      <ParticleWave />
       <section id="top" className="hero evidence-hero shell">
         <div className="hero-copy">
           <p className="kicker">FULL STACK SOFTWARE ENGINEER</p>
@@ -105,6 +108,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      </div>
 
       <section className="signal-strip">
         <div className="shell signal-grid">
