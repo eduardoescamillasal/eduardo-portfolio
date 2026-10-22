@@ -1697,3 +1697,9 @@ body:has(.credential-dialog[open]) { overflow: hidden; }
 
 .contact-trap { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 .contact-form button:disabled { opacity: .65; cursor: wait; }
+
+.project-preview { margin: 0; min-width: 0; background: #101521; border: 1px solid var(--line); }
+.project-preview video { display: block; width: 100%; height: clamp(300px, 50vw, 450px); object-fit: contain; }
+.project-preview figcaption { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; color: #e0e5ec; font-size: 11px; border-top: 1px solid #354050; }
+.project-preview button { min-height: 44px; padding: 8px 12px; background: transparent; border: 1px solid #68758a; color: inherit; cursor: pointer; }
+.project-preview button:focus-visible { outline: 2px solid var(--acid); outline-offset: 3px; }

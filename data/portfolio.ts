@@ -21,6 +21,15 @@ export const projects = [
     tags: ['Working memory','HIIT','Interactive systems','Experimentation'],
     href: 'https://kickboxer-pfc-optimizer.vercel.app/',
     mark: 'N↟'
+  },
+  {
+    eyebrow: 'IN PROGRESS · INTERACTIVE BRAIN TRAINING',
+    title: 'CogniTrain',
+    subtitle: 'Interactive Brain Training',
+    description: 'A web app in progress featuring seven cognitive games covering memory, attention, processing speed, mental arithmetic, and emotion recognition. Short sessions include adaptive challenges and progress tracking, with Dual N-Back, memory sequences, and color-word challenges available directly in the browser without signup.',
+    tags: ['Interactive games', 'Adaptive challenges', 'Progress tracking'],
+    href: 'https://cognitrainmx.vercel.app/',
+    mark: '7'
   }
 ];
 

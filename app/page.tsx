@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ProjectPreview } from "./components/project-preview";
 import { ThemeToggle } from "./components/theme-toggle";
 import { ContactForm, Certificates } from "./components/interactive";
 import { experience } from "../data/portfolio";
@@ -142,16 +143,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="case-proof">
-            <div className="proof-window">
-              <span>1&nbsp;&nbsp; P → Q</span>
-              <span>2&nbsp;&nbsp; P</span>
-              <span className="valid">
-                3&nbsp;&nbsp; Q &nbsp;&nbsp; →E 1,2 &nbsp; ✓
-              </span>
-              <b>⊢</b>
-            </div>
-          </div>
+          <ProjectPreview project="proofgym" />
           <div className="case-notes">
             <div>
               <p className="kicker">THE PROBLEM</p>
@@ -284,6 +276,24 @@ export default function Home() {
             <strong>N−BACK</strong>
             <small>timing · audio cues · work/rest · session state</small>
           </div>
+        </article>
+
+        <article className="case-study compact-case">
+          <div className="case-index">04 / IN PROGRESS</div>
+          <div className="case-main">
+            <p className="kicker">INTERACTIVE GAMES · MEMORY · ATTENTION</p>
+            <h3>CogniTrain</h3>
+            <p className="case-lede">
+              Seven browser-based cognitive games covering memory, attention,
+              processing speed, mental arithmetic, and emotion recognition.
+              Short sessions combine adaptive challenges and progress tracking.
+            </p>
+            <div className="case-links">
+              <Link href="/cognitrain">Explore the project →</Link>
+              <a href="https://cognitrainmx.vercel.app/" target="_blank" rel="noreferrer">Try the current version <Arrow /></a>
+            </div>
+          </div>
+          <ProjectPreview />
         </article>
       </section>
 

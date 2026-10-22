@@ -18,6 +18,13 @@ const details = {
     focus: "Session timing, configurable task streams, audio cues, and performance tracking make this an exploration of stateful interaction.",
     scope: "An experimental personal project. It explores cognitive and physical training interactions; it does not establish clinical or cognitive benefits.",
   },
+  cognitrain: {
+    index: 2,
+    problem: "Bringing seven different cognitive games into one browser-based app, with short sessions and a shared way to track progress.",
+    decisions: ["Make the current games available without signup.", "Use short sessions and adaptive challenges.", "Include progress tracking across the training experience."],
+    focus: "Interactive game flows, challenge configuration, session feedback, and progress tracking.",
+    scope: "Currently in progress. The public version includes Dual N-Back, memory sequences, and color-word challenges, with further development ongoing.",
+  },
 };
 export function generateStaticParams() { return Object.keys(details).map(project => ({ project })); }
 export async function generateMetadata({ params }: { params: Promise<{ project: string }> }) {
