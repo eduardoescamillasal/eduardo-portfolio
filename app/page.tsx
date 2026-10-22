@@ -91,7 +91,6 @@ export default function Home() {
               GitHub <Arrow />
             </a>
           </div>
-          <p className="cv-format-note">CV available as <a href="/Eduardo_Escamilla_CV.pdf" download>PDF</a> or <a href="/Eduardo_Escamilla_CV.docx" download>Word (.docx)</a>.</p>
         </div>
 
         <div className="portrait-card">

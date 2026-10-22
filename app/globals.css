@@ -1764,6 +1764,3 @@ body:has(.credential-dialog[open]) { overflow: hidden; }
   .button, .nav-cv, .certificate-banner, .certificate-filter, .credential-pagination button, .project-preview button, .theme-toggle, .particle-toggle, .contact-form input, .contact-form textarea, .credential-controls input, .credential-controls select { transition: none; }
   .button:not(:disabled):hover, .nav-cv:hover, .certificate-banner:hover, :where(.button, .certificate-banner, .certificate-filter, .credential-pagination button, .project-preview button, .theme-toggle):not(:disabled):active { transform: none; }
 }
-
-.cv-format-note { margin: 14px 0 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
-.cv-format-note a { text-underline-offset: 3px; }

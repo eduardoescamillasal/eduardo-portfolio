@@ -9,7 +9,7 @@ Next.js portfolio. Run `npm run dev` for development and `npm run build` for the
 - `app/[project]/page.tsx`: `/proofgym` and `/kickboxwm` project details.
 - `app/components/interactive.tsx`: certificate filters and email draft form.
 - `public/Eduardo_Escamilla_CV.pdf`: default downloadable CV.
-- `public/Eduardo_Escamilla_CV.docx`: editable Word version, linked under the hero actions. Both include a clickable portfolio URL.
+- `public/Eduardo_Escamilla_CV.docx`: editable source retained for future updates. The page offers PDF downloads only. Both files include a clickable portfolio URL.
 
 ## Certificates
 
@@ -24,7 +24,7 @@ Add real credentials to `data/certificates.ts` with title, platform, issuer, cre
 - Configure Google Analytics with the site's measurement ID and chosen consent behavior.
 - Activate FormSubmit delivery: submit the contact form once from the running site, then click the activation link emailed to eduardo.escamillasal@gmail.com. Until activation, delivery is pending. The form posts directly to FormSubmit with its default spam check, a honeypot, and a confirmation page; no email app is required. Verify receipt with a second submission after activation.
 - Define the paid service, trial terms, and Stripe product/prices before integrating checkout. Keep secret keys on the server.
-- Supply any additional personal content. PDF and Word CV downloads are available; regenerate the PDF after editing the Word document.
+- Supply any additional personal content. PDF CV downloads are available; regenerate the PDF after editing the Word source.
 
 Changes are local. Existing Vercel configuration is preserved.
 
