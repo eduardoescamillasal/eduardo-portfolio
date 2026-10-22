@@ -1735,9 +1735,9 @@ body:has(.credential-dialog[open]) { overflow: hidden; }
 .hero-stage { position: relative; isolation: isolate; overflow: hidden; }
 .hero-stage .hero { position: relative; z-index: 1; }
 .hero-stage .hero-copy, .hero-stage .portrait-card { position: relative; z-index: 1; }
-.particle-wave { position: absolute; inset: auto 0 0; height: clamp(180px, 20vw, 260px); --particle-color: #6d7d49; }
-[data-theme="dark"] .particle-wave { --particle-color: #bad768; }
-.particle-wave canvas { display: block; width: 100%; height: 100%; opacity: .65; mask-image: linear-gradient(transparent, #000 22%, #000 75%, transparent); pointer-events: none; }
+.particle-wave { position: absolute; inset: auto 0 0; height: clamp(180px, 20vw, 260px); --particle-color: #46552c; --particle-opacity: .64; --particle-mobile-opacity: .48; }
+[data-theme="dark"] .particle-wave { --particle-color: #bad768; --particle-opacity: .32; --particle-mobile-opacity: .22; }
+.particle-wave canvas { display: block; width: 100%; height: 100%; opacity: var(--particle-opacity); mask-image: linear-gradient(transparent, #000 22%, #000 75%, transparent); pointer-events: none; }
 .particle-toggle { position: absolute; bottom: 2px; right: max(16px, calc((100% - 1180px) / 2)); display: inline-flex; align-items: center; min-height: 44px; padding: 8px 10px; border: 0; background: transparent; color: var(--muted); font-size: 10px; letter-spacing: .04em; z-index: 2; cursor: pointer; }
 .hero-stage .particle-wave { pointer-events: none; }
 .particle-toggle { pointer-events: auto; }
@@ -1745,24 +1745,25 @@ body:has(.credential-dialog[open]) { overflow: hidden; }
 
 /* Tactile feedback is limited to things visitors can actually interact with. */
 .button, .nav-cv, .certificate-banner, .certificate-filter, .credential-pagination button, .project-preview button, .theme-toggle, .particle-toggle { transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background-color .18s ease, color .18s ease; }
-.button, .nav-cv { border-radius: 6px; }
-.certificate-banner, .project-preview, .lab-panel { border-radius: 8px; }
+.portrait-visual { border-radius: 14px; }
 .project-preview { overflow: hidden; }
-.contact-form input, .contact-form textarea, .credential-controls input, .credential-controls select { border-radius: 6px; transition: border-color .18s ease, box-shadow .18s ease; }
+.contact-form input, .contact-form textarea, .credential-controls input, .credential-controls select { transition: border-color .18s ease, box-shadow .18s ease; }
 .contact-form input:focus, .contact-form textarea:focus, .credential-controls input:focus, .credential-controls select:focus { border-color: var(--olive); box-shadow: 0 0 0 3px color-mix(in srgb, var(--olive) 14%, transparent); }
-:where(.button, .certificate-banner, .certificate-filter, .credential-pagination button, .project-preview button, .theme-toggle, .particle-toggle):not(:disabled):active { transform: translateY(1px) scale(.985); }
+:where(.button, .certificate-banner, .certificate-filter, .credential-pagination button, .project-preview button, .theme-toggle, .particle-toggle):not(:disabled):active { transform: translateY(1px) scale(.995); }
 :where(a, button, summary, input, textarea, select):focus-visible { outline: 2px solid var(--olive); outline-offset: 4px; }
 @media (hover: hover) and (pointer: fine) {
-  .button:not(:disabled):hover, .nav-cv:hover { transform: translateY(-2px); border-color: var(--olive); box-shadow: 0 6px 18px #11131012; }
-  .button.primary:not(:disabled):hover { box-shadow: 0 7px 24px color-mix(in srgb, var(--olive) 24%, transparent); }
-  .certificate-banner:hover { transform: translateY(-3px); border-color: var(--olive); box-shadow: 0 8px 22px #11131012; }
+  .button:not(:disabled):hover, .nav-cv:hover { transform: translateY(-1px); border-color: var(--olive); }
+  .certificate-banner:hover { transform: translateY(-1px); border-color: var(--olive); }
   .certificate-filter:hover, .credential-pagination button:not(:disabled):hover, .project-preview button:hover { border-color: var(--olive); background: color-mix(in srgb, var(--olive) 8%, var(--card)); }
   .navlinks a:hover, .case-links a:hover, .footer-links a:hover, .text-link:hover { color: var(--olive); }
 }
-@media (max-width: 599px) { .particle-wave canvas { opacity: .4; } }
+@media (max-width: 599px) { .particle-wave canvas { opacity: var(--particle-mobile-opacity); } }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .particle-toggle { display: none; }
   .button, .nav-cv, .certificate-banner, .certificate-filter, .credential-pagination button, .project-preview button, .theme-toggle, .particle-toggle, .contact-form input, .contact-form textarea, .credential-controls input, .credential-controls select { transition: none; }
   .button:not(:disabled):hover, .nav-cv:hover, .certificate-banner:hover, :where(.button, .certificate-banner, .certificate-filter, .credential-pagination button, .project-preview button, .theme-toggle):not(:disabled):active { transform: none; }
 }
+
+.cv-format-note { margin: 14px 0 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.cv-format-note a { text-underline-offset: 3px; }

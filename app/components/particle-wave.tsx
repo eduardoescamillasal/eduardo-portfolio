@@ -44,7 +44,7 @@ export function ParticleWave() {
           const distance = Math.hypot(vx, vy);
           const radius = 135;
           if (distance < radius) {
-            const strength = (1 - distance / radius) ** 2 * 48;
+            const strength = (1 - distance / radius) ** 2 * 32;
             targetX = vx / Math.max(distance, 1) * strength;
             targetY = vy / Math.max(distance, 1) * strength;
           }
@@ -61,7 +61,7 @@ export function ParticleWave() {
       frame = requestAnimationFrame(tick);
       if (now - last < 1000 / 30) return;
       // Bound elapsed time after returning to a background tab.
-      time.current += Math.min((now - (last || now)) / 1000, .06) * .22;
+      time.current += Math.min((now - (last || now)) / 1000, .06) * .14;
       last = now;
       draw();
     }
@@ -89,8 +89,8 @@ export function ParticleWave() {
       canvas.width = Math.round(width * ratio);
       canvas.height = Math.round(height * ratio);
       context.setTransform(ratio, 0, 0, ratio, 0, 0);
-      const columns = width < 600 ? 64 : 128;
-      const rows = width < 600 ? 22 : 38;
+      const columns = width < 600 ? 64 : 104;
+      const rows = width < 600 ? 22 : 30;
       particles = [];
       for (let row = 0; row < rows; row++) {
         for (let column = 0; column < columns; column++) {

@@ -48,7 +48,7 @@ export default function Home() {
           >
             GitHub <Arrow />
           </a>
-          <a className="nav-cv" href="/Eduardo_Escamilla_CV.docx" download>
+          <a className="nav-cv" href="/Eduardo_Escamilla_CV.pdf" download>
             Download CV
           </a>
         </div>
@@ -78,8 +78,8 @@ export default function Home() {
               View selected work <Arrow direction="down" />
             </a>
 
-            <a className="button" href="/Eduardo_Escamilla_CV.docx" download>
-              Download CV <Arrow direction="down" />
+            <a className="button" href="/Eduardo_Escamilla_CV.pdf" download>
+              Download CV (PDF) <Arrow direction="down" />
             </a>
 
             <a
@@ -91,6 +91,7 @@ export default function Home() {
               GitHub <Arrow />
             </a>
           </div>
+          <p className="cv-format-note">CV available as <a href="/Eduardo_Escamilla_CV.pdf" download>PDF</a> or <a href="/Eduardo_Escamilla_CV.docx" download>Word (.docx)</a>.</p>
         </div>
 
         <div className="portrait-card">
@@ -356,8 +357,8 @@ export default function Home() {
           <p className="muted">
             A condensed history. Download the CV for the full version.
           </p>
-          <a className="text-link" href="/Eduardo_Escamilla_CV.docx" download>
-            Download CV <Arrow direction="down" />
+          <a className="text-link" href="/Eduardo_Escamilla_CV.pdf" download>
+            Download CV (PDF) <Arrow direction="down" />
           </a>
         </div>
         <div className="timeline">
@@ -482,8 +483,8 @@ export default function Home() {
           >
             GitHub <Arrow />
           </a>
-          <a href="/Eduardo_Escamilla_CV.docx" download>
-            Download CV <Arrow direction="down" />
+          <a href="/Eduardo_Escamilla_CV.pdf" download>
+            Download CV (PDF) <Arrow direction="down" />
           </a>
           <span>Monterrey, Mexico</span>
         </div>
