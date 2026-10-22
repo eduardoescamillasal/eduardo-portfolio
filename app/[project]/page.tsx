@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ThemeToggle } from "../components/theme-toggle";
 import { notFound } from "next/navigation";
 import { projects } from "../../data/portfolio";
+import { shareImage } from "../../lib/site";
 
 const details = {
   proofgym: {
@@ -30,7 +31,15 @@ export function generateStaticParams() { return Object.keys(details).map(project
 export async function generateMetadata({ params }: { params: Promise<{ project: string }> }) {
   const { project } = await params;
   const detail = details[project as keyof typeof details];
-  return { title: detail ? `${projects[detail.index].title} | Eduardo Escamilla` : "Project not found" };
+  if (!detail) return { title: "Project not found", robots: { index: false, follow: false } };
+  const item = projects[detail.index];
+  const title = `${item.title} — ${item.subtitle}`;
+  return {
+    title, description: item.description,
+    alternates: { canonical: `/${project}` },
+    openGraph: { title, description: item.description, url: `/${project}`, images: [shareImage] },
+    twitter: { card: "summary_large_image" as const, title, description: item.description, images: [shareImage] },
+  };
 }
 export default async function ProjectPage({ params }: { params: Promise<{ project: string }> }) {
   const { project } = await params;

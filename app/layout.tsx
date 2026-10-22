@@ -1,9 +1,21 @@
 import type { Metadata } from 'next';
+import { siteUrl, siteDescription, shareImage } from '../lib/site';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Eduardo Escamilla | Software Engineer · Mathematics · AI',
-  description: 'Portfolio of Eduardo Escamilla — full stack software engineering, mathematics, cloud, and AI experimentation.',
+  metadataBase: new URL(siteUrl),
+  title: { default: 'Eduardo Escamilla | Software Engineer', template: '%s | Eduardo Escamilla' },
+  description: siteDescription,
+  applicationName: 'Eduardo Escamilla — Portfolio',
+  authors: [{ name: 'Eduardo Escamilla', url: siteUrl }],
+  creator: 'Eduardo Escamilla',
+  openGraph: {
+    type: 'website', locale: 'en_US', siteName: 'Eduardo Escamilla',
+    title: 'Eduardo Escamilla | Software Engineer', description: siteDescription,
+    images: [shareImage],
+  },
+  twitter: { card: 'summary_large_image', title: 'Eduardo Escamilla | Software Engineer', description: siteDescription, images: [shareImage] },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

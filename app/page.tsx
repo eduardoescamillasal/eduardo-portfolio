@@ -1,4 +1,6 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+import { siteUrl, siteDescription, shareImage } from "../lib/site";
 import { ProjectPreview } from "./components/project-preview";
 import { ThemeToggle } from "./components/theme-toggle";
 import { ContactForm, Certificates } from "./components/interactive";
@@ -6,9 +8,26 @@ import { experience } from "../data/portfolio";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website", url: "/", locale: "en_US", siteName: "Eduardo Escamilla",
+    title: "Eduardo Escamilla | Software Engineer", description: siteDescription,
+    images: [shareImage],
+  },
+};
+
 export default function Home() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org", "@type": "ProfilePage", url: siteUrl,
+        mainEntity: { "@type": "Person", name: "Eduardo Escamilla", url: siteUrl,
+          image: `${siteUrl}/portrait.jpg`, jobTitle: "Software Engineer",
+          sameAs: ["https://github.com/eduardoescamillasal"],
+          homeLocation: { "@type": "Place", name: "Monterrey, Mexico" },
+          knowsAbout: ["Software Engineering", "Web Development", "Mobile Development", "React", "Next.js", "React Native", "Cloud Computing"] },
+      }).replace(/</g, "\\u003c") }} />
       <nav className="nav shell">
         <a className="brand" href="#top">
           EE<span>.</span>
