@@ -1,3 +1,5 @@
+import { Arrow } from "./arrow";
+
 const profileUrl = "https://www.codewars.com/users/jlsomnifero";
 
 async function getStats(): Promise<{ rank: string; completed: number } | null> {
@@ -20,6 +22,6 @@ async function getStats(): Promise<{ rank: string; completed: number } | null> {
 export async function CodewarsProfile() {
   const stats = await getStats();
   return <a className="codewars-profile" href={profileUrl} target="_blank" rel="noreferrer">
-    Codewars{stats && <> · {stats.rank} · {stats.completed} kata completed</>} <span aria-hidden="true">↗</span>
+    Codewars{stats && <> · {stats.rank} · {stats.completed} kata completed</>} <Arrow />
   </a>;
 }

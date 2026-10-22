@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Arrow } from "./components/arrow";
 import type { Metadata } from "next";
 import { siteUrl, siteDescription, shareImage } from "../lib/site";
 import { ProjectPreview } from "./components/project-preview";
@@ -7,7 +8,7 @@ import { ThemeToggle } from "./components/theme-toggle";
 import { ContactForm, Certificates } from "./components/interactive";
 import { experience } from "../data/portfolio";
 
-const Arrow = () => <span aria-hidden="true">↗</span>;
+
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -71,11 +72,11 @@ export default function Home() {
 
           <div className="actions">
             <a className="button primary" href="#work">
-              View selected work <Arrow />
+              View selected work <Arrow direction="down" />
             </a>
 
             <a className="button" href="/Eduardo_Escamilla_CV.docx" download>
-              Download CV ↓
+              Download CV <Arrow direction="down" />
             </a>
 
             <a
@@ -146,7 +147,7 @@ export default function Home() {
               proofs and practicing quantitative STEM problems.
             </p>
             <div className="case-links">
-              <Link href="/proofgym">Explore the project →</Link>
+              <Link href="/proofgym">Explore the project <Arrow direction="right" /></Link>
               <a
                 href="https://proof-gym.vercel.app/"
                 target="_blank"
@@ -267,7 +268,7 @@ export default function Home() {
               working-memory tasks with movement and timed HIIT sessions.
             </p>
             <div className="case-links">
-              <Link href="/kickboxwm">Explore the project →</Link>
+              <Link href="/kickboxwm">Explore the project <Arrow direction="right" /></Link>
               <a
                 href="https://kickboxer-pfc-optimizer.vercel.app/"
                 target="_blank"
@@ -309,7 +310,7 @@ export default function Home() {
               Short sessions combine adaptive challenges and progress tracking.
             </p>
             <div className="case-links">
-              <Link href="/cognitrain">Explore the project →</Link>
+              <Link href="/cognitrain">Explore the project <Arrow direction="right" /></Link>
               <a href="https://cognitrainmx.vercel.app/" target="_blank" rel="noreferrer">Try the current version <Arrow /></a>
             </div>
           </div>
@@ -351,7 +352,7 @@ export default function Home() {
             A condensed history. Download the CV for the full version.
           </p>
           <a className="text-link" href="/Eduardo_Escamilla_CV.docx" download>
-            Download CV ↓
+            Download CV <Arrow direction="down" />
           </a>
         </div>
         <div className="timeline">
@@ -396,7 +397,7 @@ export default function Home() {
               I continue building on that foundation through structured learning
               and projects that put the ideas into practice.
             </p>
-            <a className="text-link" href="#certificates">Explore my professional development ↓</a>
+            <a className="text-link" href="#certificates">Explore my professional development <Arrow direction="down" /></a>
             <div className="education-records" aria-labelledby="education-heading">
               <h3 id="education-heading">Education</h3>
               <article>
@@ -424,8 +425,8 @@ export default function Home() {
                   Seller Competition by Mechanism Design · Damian S. Damianov
                   <br />Acknowledged in the published article for contributions through comments.
                   <span className="research-links">
-                    <a href="https://link.springer.com/article/10.1007/s00199-010-0597-z#additional-information" target="_blank" rel="noreferrer">View publication & acknowledgment ↗</a>
-                    <a href="/research/seller-competition-by-mechanism-design.pdf" download>Download paper (PDF) ↓</a>
+                    <a href="https://link.springer.com/article/10.1007/s00199-010-0597-z#additional-information" target="_blank" rel="noreferrer">View publication & acknowledgment <Arrow /></a>
+                    <a href="/research/seller-competition-by-mechanism-design.pdf" download>Download paper (PDF) <Arrow direction="down" /></a>
                   </span>
                 </span>
               </p>
@@ -477,7 +478,7 @@ export default function Home() {
             GitHub <Arrow />
           </a>
           <a href="/Eduardo_Escamilla_CV.docx" download>
-            Download CV ↓
+            Download CV <Arrow direction="down" />
           </a>
           <span>Monterrey, Mexico</span>
         </div>

@@ -1,5 +1,7 @@
 "use client";
 
+import { Arrow } from "./arrow";
+
 import { useRef, useState } from "react";
 import { certificates, type Certificate } from "../../data/certificates";
 
@@ -34,16 +36,16 @@ export function Certificates() {
     </button>)}</div>
     {expanded && <p className="fine-note" role="status">{filtered.length ? `${page * pageSize + 1}–${Math.min((page + 1) * pageSize, filtered.length)} of ${filtered.length} learning records` : "No matching credentials. Try another search or filter."}</p>}
     <div className="credential-footer">
-      <button className="text-link certificate-toggle" onClick={() => { setExpanded(!expanded); setPage(0); }} aria-expanded={expanded}>{expanded ? "Show selected only ↑" : `Browse all ${certificates.length} learning records →`}</button>
-      {expanded && pages > 1 && <div className="credential-pagination"><button onClick={() => setPage(page - 1)} disabled={page === 0} aria-label="Previous certificates">←</button><span className="fine-note">{page + 1} / {pages}</span><button onClick={() => setPage(page + 1)} disabled={page + 1 >= pages} aria-label="Next certificates">→</button></div>}
+      <button className="text-link certificate-toggle" onClick={() => { setExpanded(!expanded); setPage(0); }} aria-expanded={expanded}>{expanded ? "Show selected only" : `Browse all ${certificates.length} learning records`} <Arrow direction={expanded ? "up" : "down"} /></button>
+      {expanded && pages > 1 && <div className="credential-pagination"><button onClick={() => setPage(page - 1)} disabled={page === 0} aria-label="Previous certificates"><Arrow direction="left" /></button><span className="fine-note">{page + 1} / {pages}</span><button onClick={() => setPage(page + 1)} disabled={page + 1 >= pages} aria-label="Next certificates"><Arrow direction="right" /></button></div>}
     </div>
     <dialog ref={dialog} className="credential-dialog" aria-labelledby="credential-title" onClick={e => { if (e.target === e.currentTarget) dialog.current?.close(); }}>
       {selected && <><header><div><p className="kicker">{selected.platform} · {selected.kind}</p><h3 id="credential-title">{selected.title}</h3><p className="fine-note">{selected.issuer}</p></div><button className="credential-close" aria-label="Close certificate" onClick={() => dialog.current?.close()}>×</button></header>
-      {selected.preview ? <object className="credential-document" data={selected.preview} aria-label={`${selected.title} certificate preview`}><a href={selected.preview} target="_blank" rel="noreferrer">Open certificate preview ↗</a></object> : <p className="fine-note">Completed coursework. Certificate preview will be added here.</p>}
+      {selected.preview ? <object className="credential-document" data={selected.preview} aria-label={`${selected.title} certificate preview`}><a href={selected.preview} target="_blank" rel="noreferrer">Open certificate preview <Arrow /></a></object> : <p className="fine-note">Completed coursework. Certificate preview will be added here.</p>}
       {selected.completedOn && <p className="fine-note">Completed {selected.completedOn}{selected.hours ? ` · ${selected.hours} hours` : ""}{selected.honors ? " · With honors" : ""}</p>}
       {selected.courses && <div><h4>Included courses</h4><ul>{selected.courses.map(course => <li key={course}>{course}</li>)}</ul></div>}
-      {selected.preview && <p><a className="text-link" href={selected.preview} target="_blank" rel="noreferrer">Open certificate document ↗</a></p>}
-      {selected.url && <a className="text-link" href={selected.url} target="_blank" rel="noreferrer">Verify credential ↗</a>}</>}
+      {selected.preview && <p><a className="text-link" href={selected.preview} target="_blank" rel="noreferrer">Open certificate document <Arrow /></a></p>}
+      {selected.url && <a className="text-link" href={selected.url} target="_blank" rel="noreferrer">Verify credential <Arrow /></a>}</>}
     </dialog>
   </section>;
 }
@@ -66,7 +68,7 @@ export function ContactForm() {
     <div><label htmlFor="contact-email">Your email</label><input id="contact-email" name="email" type="email" autoComplete="email" required maxLength={254} /></div>
     <div className="message-field"><label htmlFor="contact-message">What are you building?</label><textarea id="contact-message" name="message" rows={5} required maxLength={5000} /></div>
     <p className="fine-note">Send me a message here. You may be asked to complete a quick spam check before confirmation.</p>
-    <button className="button primary" type="submit" disabled={sending}>{sending ? "Sending…" : "Send message ↗"}</button>
+    <button className="button primary" type="submit" disabled={sending}>{sending ? "Sending…" : <>Send message <Arrow direction="right" /></>}</button>
     {sending && <p role="status">Opening secure submission. Complete any spam check to finish sending.</p>}
   </form>;
 }

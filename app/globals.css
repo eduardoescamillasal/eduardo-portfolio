@@ -1717,3 +1717,16 @@ body:has(.credential-dialog[open]) { overflow: hidden; }
 .project-preview button { min-height: 44px; padding: 8px 12px; background: transparent; border: 1px solid var(--line); color: var(--ink); cursor: pointer; }
 .project-preview button:focus-visible { outline: 2px solid var(--olive); outline-offset: 3px; }
 .footer-links .codewars-profile { color: var(--muted); font-weight: 400; line-height: 1.6; }
+
+/* Consistent directional cues for interactive links. */
+.link-arrow { display: inline-block; width: 1.15em; height: 1.15em; flex-shrink: 0; margin-inline-start: .35em; vertical-align: -.16em; transition: transform .18s ease; --arrow-x: 2px; --arrow-y: -2px; }
+.link-arrow[data-direction="right"] { --arrow-x: 3px; --arrow-y: 0px; }
+.link-arrow[data-direction="down"] { --arrow-x: 0px; --arrow-y: 3px; }
+.link-arrow[data-direction="up"] { --arrow-x: 0px; --arrow-y: -3px; }
+.link-arrow[data-direction="left"] { margin-inline: 0 .35em; --arrow-x: -3px; --arrow-y: 0px; }
+:where(a, button):is(:hover, :focus-visible):not(:disabled) .link-arrow { transform: translate(var(--arrow-x), var(--arrow-y)); }
+.credential-pagination .link-arrow { margin: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .link-arrow { transition: none; }
+  :where(a, button):is(:hover, :focus-visible):not(:disabled) .link-arrow { transform: none; }
+}
