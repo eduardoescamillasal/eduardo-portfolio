@@ -13,6 +13,8 @@ export function ProjectPreview({ project = "cognitrain" }: PreviewProps) {
   const [visible, setVisible] = useState(false);
   const [allowed, setAllowed] = useState(false);
   const [playing, setPlaying] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const media = matchMedia("(prefers-reduced-motion: reduce)");
@@ -31,23 +33,36 @@ export function ProjectPreview({ project = "cognitrain" }: PreviewProps) {
     const sync = () => {
       const element = video.current;
       if (!element) return;
-      if (near && visible && allowed && !document.hidden) {
+      if (near && visible && allowed && !failed && !document.hidden) {
         void element.play().catch(() => setPlaying(false));
       } else { element.pause(); }
     };
     sync();
     document.addEventListener("visibilitychange", sync);
     return () => document.removeEventListener("visibilitychange", sync);
-  }, [near, visible, allowed]);
+  }, [near, visible, allowed, failed]);
 
   return <figure className="project-preview" ref={container}>
-    <video ref={video} src={near ? `/previews/${project}.mp4` : undefined}
+    <div className="preview-media">
+      <div className="preview-fallback" hidden={ready && !failed}>
+        {project === "proofgym" ? <div className="case-proof"><div className="proof-window">
+          <span>1&nbsp;&nbsp; P → Q</span><span>2&nbsp;&nbsp; P</span>
+          <span className="valid">3&nbsp;&nbsp; Q &nbsp;&nbsp; →E 1,2 &nbsp; ✓</span><b>⊢</b>
+        </div></div> : <div className="stream-diagram">
+          <div><b>memory</b><span>Dual N-Back · memory sequences</span></div>
+          <div><b>attention</b><span>color-word challenges</span></div>
+          <strong>7 GAMES</strong><small>short sessions · adaptive challenges · progress tracking</small>
+        </div>}
+      </div>
+    <video className={ready && !failed ? "preview-ready" : ""} ref={video} src={near ? `/previews/${project}.mp4` : undefined}
       poster={`/previews/${project}.jpg`} width={project === "proofgym" ? 960 : 720} height={project === "proofgym" ? 674 : 1016}
       muted loop playsInline preload="none" aria-label={`${title} ${caption}`}
+      onLoadedData={() => setReady(true)} onError={() => { setFailed(true); setPlaying(false); }}
       onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} />
+    </div>
     <figcaption>
-      <span>{title} · {caption}</span>
-      <button type="button" onClick={() => {
+      <span>{title} · {failed ? "Project preview" : caption}</span>
+      {!failed && <button type="button" onClick={() => {
         setNear(true);
         setAllowed(!playing);
         if (playing) video.current?.pause();
@@ -55,7 +70,7 @@ export function ProjectPreview({ project = "cognitrain" }: PreviewProps) {
       }}
         aria-label={`${playing ? "Pause" : "Play"} ${title} preview`}>
         {playing ? "Pause ⏸" : "Play ▶"}
-      </button>
+      </button>}
     </figcaption>
   </figure>;
 }
