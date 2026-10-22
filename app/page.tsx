@@ -468,6 +468,13 @@ export default function Home() {
         <ContactForm />
         <div className="footer-links">
           <a
+            href="https://www.codewars.com/users/jlsomnifero"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Codewars <Arrow />
+          </a>
+          <a
             href="https://github.com/eduardoescamillasal"
             target="_blank"
             rel="noreferrer"
