@@ -1,3 +1,5 @@
+import { proofgymGuide } from "./proofgym";
+
 export const explanations = {
   "portfolio": {
     "title": "Explore the code with AI",
@@ -18,23 +20,7 @@ export const explanations = {
     "codeLabel": "Portfolio · app/components/particle-wave.tsx",
     "facts": "React canvas particle animation. tick caps drawing at 30 FPS and bounds elapsed time. syncAnimation stops the loop when offscreen, in a hidden tab, paused, or reduced motion is preferred. IntersectionObserver supplies visibility. The effect cleans up observers, listeners, and the frame request."
   },
-  "proofgym": {
-    "title": "Explore ProofGym with AI",
-    "summary": "Ask how the proof trainer’s documented features fit together, what engineering challenges they create, or how you might extend them.",
-    "questions": [
-      "Explain how the proof trainer works.",
-      "What makes proof scope and dependencies challenging?",
-      "What are the tradeoffs of step-by-step validation?",
-      "How could this project be extended?"
-    ],
-    "sources": [
-      {
-        "label": "Try ProofGym",
-        "href": "https://proof-gym.vercel.app/"
-      }
-    ],
-    "facts": "Fitch-style proof trainer with step-by-step validation, references to earlier lines and proof scope. Progressive exercises, custom practice, completion tracking and achievements. STEM arena spans mathematics, physics, chemistry and logic. Source code is not supplied for this project; explain documented behavior and label possible implementations as proposals."
-  },
+  proofgym: proofgymGuide,
   "kickboxwm": {
     "title": "Explore KickboxWM with AI",
     "summary": "Explore the timing, independent task streams, and session interactions behind this experimental training app.",

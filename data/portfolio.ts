@@ -9,7 +9,7 @@ export const projects = [
     title: 'ProofGym',
     subtitle: 'Logic & STEM Problem-Solving Platform',
     description: 'An interactive environment for practicing formal reasoning and quantitative problem solving. It includes a Fitch-style proof trainer with step-by-step validation and a broader arena spanning mathematics, physics, chemistry, and logic.',
-    tags: ['Formal logic','Fitch proofs','Problem solving','Learning systems'],
+    tags: ['React · TypeScript','Formula parser','Proof validation','Zustand'],
     href: 'https://proof-gym.vercel.app/',
     mark: '⊢'
   },

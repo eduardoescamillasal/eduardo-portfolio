@@ -86,6 +86,9 @@ test('project context excludes personal records and stays specific to the select
     assert.match(instructions, /Do not answer personal biography/);
     assert.doesNotMatch(instructions, /University studies|Q Bridge|Avant Santé|The Blue People/);
   }
-  assert.match(instructionsFor('proofgym'), /Source code is not supplied/);
+  assert.match(instructionsFor('proofgym'), /export function isAccessible/);
+  assert.match(instructionsFor('proofgym'), /localStorage/);
+  assert.match(instructionsFor('proofgym'), /at most 80 candidates/);
+  assert.match(instructionsFor('kickboxwm'), /Source code is not supplied/);
   assert.doesNotMatch(instructionsFor('proofgym'), /function syncAnimation/);
 });

@@ -34,8 +34,14 @@ The hero includes an original canvas particle wave that reacts to fine-pointer m
 
 ## Project AI explorer
 
-The homepage selected-work section includes an AI explainer for a real excerpt of the portfolio particle animation. Each project detail page has a guide scoped to its documented features and engineering questions. The guides offer four starter questions, follow-up input, a collapsible question list, and source links. The homepage guide also displays the code excerpt. Other project source code is not included; the guide distinguishes documented behavior from proposed designs.
+The homepage selected-work section includes an AI explainer for a real excerpt of the portfolio particle animation. Each project detail page has a guide scoped to its documented features and engineering questions. The guides offer four starter questions, follow-up input, a collapsible question list, and source links. The homepage guide also displays the code excerpt. ProofGym also includes a reviewed validation excerpt and implementation context from its supplied source snapshot. KickboxWM and CogniTrain currently use documented features only; their source has not yet been reviewed. The guide distinguishes documented behavior from proposed designs.
 
 The guide receives only the selected project context, not experience, education or credential records. Instructions keep discussion focused on code and project design; this is a model instruction boundary, not a guarantee against every adversarial prompt.
 
 Set the server-only `OPENAI_API_KEY` in `.env.local` and in hosting. Optional `OPENAI_MODEL` defaults to `gpt-5.4-mini`. Questions are processed through the Responses API with `store: false`. Existing request validation, bounded history, timeout, and per-instance rate limits apply. Run `npm run test:assistant` and `npm run build` to validate.
+
+### ProofGym source review
+
+Reviewed the user-supplied local snapshot on 2026-10-23 without modifying it. Curated context and a verbatim `isAccessible` excerpt are in `data/proofgym.ts`. Evidence: `package.json` (stack), `lib/formula.ts` (parser/AST), `lib/validator.ts` (rules and scope), `store/useProofStore.ts` (workspace transitions), `lib/generator.ts` and `components/ExerciseSelector.tsx` (implemented generator), `store/useProgressStore.ts` and `store/useArenaStore.ts` (localStorage), `lib/progress.ts` (XP/medals/streaks), and `lib/puzzles/index.ts` (arena domains and proof adapter).
+
+The upstream README is stale about generator and persistence status. This review does not establish deployed-version parity, authorship history, measured outcomes, or formal correctness. In particular, the current completion helper compares the last top-level formula to the goal rather than independently checking every validation result. The guide must not imply that a completion indicator certifies an entirely valid proof. Source changes need a fresh review before updating this curated snapshot.
