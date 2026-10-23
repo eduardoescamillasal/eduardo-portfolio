@@ -16,9 +16,9 @@ export const projects = [
   {
     eyebrow: 'COGNITION · SOFTWARE · TRAINING',
     title: 'KickboxWM',
-    subtitle: 'Cognitive & Physical Training Application',
-    description: 'An experimental application combining configurable working-memory tasks with movement and HIIT sessions, including independent memory streams, audio cues, bilingual announcements, timing controls, and performance tracking.',
-    tags: ['Working memory','HIIT','Interactive systems','Experimentation'],
+    subtitle: 'Cognitive–Motor Training Experiment',
+    description: 'A personal experiment exploring delayed-recall memory tasks during kickboxing-style intervals. A configurable prototype turns a hypothesis about concurrent cognitive and physical training into something that can be tried and investigated.',
+    tags: ['Hypothesis-driven prototype','Delayed recall','Movement','Experimentation'],
     href: 'https://kickboxer-pfc-optimizer.vercel.app/',
     mark: 'N↟'
   },

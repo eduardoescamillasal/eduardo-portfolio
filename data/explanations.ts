@@ -1,3 +1,4 @@
+import { kickboxwmGuide } from "./kickboxwm";
 import { proofgymGuide } from "./proofgym";
 
 export const explanations = {
@@ -21,23 +22,7 @@ export const explanations = {
     "facts": "React canvas particle animation. tick caps drawing at 30 FPS and bounds elapsed time. syncAnimation stops the loop when offscreen, in a hidden tab, paused, or reduced motion is preferred. IntersectionObserver supplies visibility. The effect cleans up observers, listeners, and the frame request."
   },
   proofgym: proofgymGuide,
-  "kickboxwm": {
-    "title": "Explore KickboxWM with AI",
-    "summary": "Explore the timing, independent task streams, and session interactions behind this experimental training app.",
-    "questions": [
-      "Explain how the training session works.",
-      "What makes independent task streams challenging?",
-      "How could session timing be designed?",
-      "What are the tradeoffs of audio cues?"
-    ],
-    "sources": [
-      {
-        "label": "Try KickboxWM",
-        "href": "https://kickboxer-pfc-optimizer.vercel.app/"
-      }
-    ],
-    "facts": "Experimental memory tasks combined with movement and HIIT. Independent movement and visual memory streams, configurable work/rest intervals and difficulty, audio cues, bilingual announcements and performance tracking. No clinical benefits established. Source code is not supplied; proposed timing architectures must be clearly labeled suggestions."
-  },
+  kickboxwm: kickboxwmGuide,
   "cognitrain": {
     "title": "Explore CogniTrain with AI",
     "summary": "Explore short game sessions, adaptive challenges, and progress tracking in a browser-based app currently in development.",

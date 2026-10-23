@@ -92,3 +92,12 @@ test('project context excludes personal records and stays specific to the select
   assert.match(instructionsFor('kickboxwm'), /Source code is not supplied/);
   assert.doesNotMatch(instructionsFor('proofgym'), /function syncAnimation/);
 });
+
+test('KickboxWM context centers the experiment and separates theory from results', () => {
+  const context = instructionsFor('kickboxwm');
+  assert.match(context, /hypothesis-driven experiment/);
+  assert.match(context, /has not been tested in a controlled trial/);
+  assert.match(context, /No measured outcomes or participant results/);
+  assert.match(context, /not necessarily the conventional N-back match-detection/);
+  assert.doesNotMatch(context, /export function isAccessible/);
+});

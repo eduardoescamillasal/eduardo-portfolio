@@ -271,11 +271,12 @@ export default function Home() {
         <article className="case-study compact-case">
           <div className="case-index">03 / EXPERIMENT</div>
           <div className="case-main">
-            <p className="kicker">COGNITION · INTERACTION · TIMING</p>
+            <p className="kicker">HYPOTHESIS · PROTOTYPE · EXPERIMENT</p>
             <h3>KickboxWM</h3>
             <p className="case-lede">
-              An experimental application combining configurable dual N-back
-              working-memory tasks with movement and timed HIIT sessions.
+              Could recalling an earlier movement cue while exercising create a useful
+              cognitive–motor training task? A personal hypothesis turned into
+              a configurable prototype for exploration.
             </p>
             <div className="case-links">
               <Link href="/kickboxwm">Explore the project <Arrow direction="right" /></Link>
