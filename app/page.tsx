@@ -143,7 +143,6 @@ export default function Home() {
       </section>
 
       <section id="work" className="section shell work-v2">
-        <ExplainThis topic="portfolio" />
         <div className="section-head">
           <p className="kicker">SELECTED WORK</p>
           <h2>Work that shows how I approach problems.</h2>
@@ -176,6 +175,7 @@ export default function Home() {
                 GitHub <Arrow />
               </a>
             </div>
+            <ExplainThis topic="proofgym" />
           </div>
           <ProjectPreview project="proofgym" />
           <div className="case-notes">
@@ -300,6 +300,7 @@ export default function Home() {
                 GitHub <Arrow />
               </a>
             </div>
+            <ExplainThis topic="kickboxwm" />
           </div>
           <div className="stream-diagram">
             <div>
@@ -329,6 +330,7 @@ export default function Home() {
               <Link href="/cognitrain">Explore the project <Arrow direction="right" /></Link>
               <a href="https://cognitrainmx.vercel.app/" target="_blank" rel="noreferrer">Try the current version <Arrow /></a>
             </div>
+            <ExplainThis topic="cognitrain" />
           </div>
           <ProjectPreview />
         </article>

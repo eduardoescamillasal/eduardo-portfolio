@@ -61,8 +61,8 @@ export function ExplainPanel({ topic, aiEnabled }: { topic: ExplanationTopic; ai
   function submit(event: FormEvent) { event.preventDefault(); void ask(question); }
   function cancelPending() { pending.current?.abort(); pending.current = null; setBusy(false); }
 
-  return <div className="assistant-widget">
-    <button className="explain-trigger" type="button" aria-haspopup="dialog" aria-controls={id}
+  return <div className="assistant-widget" data-project={topic}>
+    <button className="explain-trigger" type="button" aria-haspopup="dialog" aria-controls={id} aria-label={section.title}
       onClick={() => dialog.current?.showModal()}><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-3 3V11.5A8.5 8.5 0 0 1 9.5 3h3a8.5 8.5 0 0 1 8.5 8.5Z" /></svg> Explore with AI</button>
     <dialog className="explain-dialog" ref={dialog} id={id} aria-labelledby={`${id}-title`}
       onClose={cancelPending} onClick={event => { if (event.target === event.currentTarget) dialog.current?.close(); }}>
