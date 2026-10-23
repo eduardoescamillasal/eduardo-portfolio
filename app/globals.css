@@ -1770,7 +1770,7 @@ body:has(.credential-dialog[open]) { overflow: hidden; }
 .signal-heading h2 { margin: 0; font-size: 22px; letter-spacing: -.025em; }
 .signal-heading p { margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
 .signal-grid b a { text-decoration-thickness: 1px; text-underline-offset: 4px; }
-.assistant-widget { position: fixed; right: 20px; bottom: max(20px, env(safe-area-inset-bottom)); z-index: 50; }
+.assistant-widget { margin-block: 24px; }
 .explain-trigger { box-shadow: 0 4px 20px #11131015; border-radius: 24px; display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 8px 12px; border: 1px solid var(--line); background: var(--card); color: var(--olive); font-size: 11px; font-weight: 600; cursor: pointer; }
 .explain-trigger span { color: inherit; font: inherit; }
 .explain-trigger:hover { border-color: var(--olive); }
@@ -1805,7 +1805,6 @@ body:has(.explain-dialog[open]) { overflow: hidden; }
 @media (max-width: 480px) { .explain-header, .explain-conversation { padding: 18px; } .explain-form { padding: 16px 18px; } }
 
 @media (max-width: 480px) {
-  .assistant-widget { right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); }
   .explain-dialog { inset: auto 12px max(12px, env(safe-area-inset-bottom)) 12px; width: auto; max-height: calc(100dvh - 24px - env(safe-area-inset-bottom)); }
 }
 
@@ -1819,3 +1818,7 @@ body:has(.explain-dialog[open]) { overflow: hidden; }
 .explain-explore { min-height: 44px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: var(--olive); font-size: 12px; cursor: pointer; }
 .explain-explore:hover:not(:disabled) { border-color: var(--olive); }
 .explain-explore[aria-expanded="true"] { margin-bottom: 12px; }
+
+.explain-code { margin-block: 16px; }
+.explain-code summary { cursor: pointer; color: var(--olive); font-size: 12px; padding-block: 10px; }
+.explain-code pre { max-height: 240px; overflow: auto; padding: 14px; background: var(--card); border: 1px solid var(--line); font: 11px/1.6 monospace; white-space: pre; }

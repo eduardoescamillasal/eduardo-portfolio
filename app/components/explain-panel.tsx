@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
-import { explanations, starterQuestions, type ExplanationTopic } from "../../data/explanations";
+import { explanations, type ExplanationTopic } from "../../data/explanations";
 
 type Message = { role: "user" | "assistant"; content: string };
 
 export function ExplainPanel({ topic, aiEnabled }: { topic: ExplanationTopic; aiEnabled: boolean }) {
   const section = explanations[topic];
+  const code = "code" in section ? section.code : null;
   const id = useId();
   const dialog = useRef<HTMLDialogElement>(null);
   const conversation = useRef<HTMLDivElement>(null);
@@ -61,15 +62,16 @@ export function ExplainPanel({ topic, aiEnabled }: { topic: ExplanationTopic; ai
 
   return <div className="assistant-widget">
     <button className="explain-trigger" type="button" aria-haspopup="dialog" aria-controls={id}
-      onClick={() => dialog.current?.showModal()}><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-3 3V11.5A8.5 8.5 0 0 1 9.5 3h3a8.5 8.5 0 0 1 8.5 8.5Z" /></svg> Ask about my work</button>
+      onClick={() => dialog.current?.showModal()}><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-3 3V11.5A8.5 8.5 0 0 1 9.5 3h3a8.5 8.5 0 0 1 8.5 8.5Z" /></svg> Explore with AI</button>
     <dialog className="explain-dialog" ref={dialog} id={id} aria-labelledby={`${id}-title`}
       onClose={cancelPending} onClick={event => { if (event.target === event.currentTarget) dialog.current?.close(); }}>
       <header className="explain-header">
-        <div><p className="kicker">PORTFOLIO ASSISTANT</p><h2 id={`${id}-title`}>{section.title}</h2></div>
+        <div><p className="kicker">PROJECT EXPLORER</p><h2 id={`${id}-title`}>{section.title}</h2></div>
         <button className="explain-close" type="button" aria-label="Close assistant" onClick={() => dialog.current?.close()}>×</button>
       </header>
       <div className="explain-conversation" ref={conversation}>
         <div className="explain-summary"><p>{section.summary}</p></div>
+        {code && <details className="explain-code"><summary>View the code excerpt · particle-wave.tsx</summary><pre><code>{code}</code></pre></details>}
         <nav className="explain-sources" aria-label="Supporting portfolio sections">
           {section.sources.map(source => <a href={source.href} key={source.href} onClick={() => dialog.current?.close()}>{source.label} ↗</a>)}
         </nav>
@@ -79,7 +81,7 @@ export function ExplainPanel({ topic, aiEnabled }: { topic: ExplanationTopic; ai
             <p className="explain-label">{message.role === "user" ? "You" : "AI assistant"}</p><p>{message.content}</p>
           </div>)}
         </div>
-        {busy && <p role="status" className="fine-note">Looking through the portfolio…</p>}
+        {busy && <p role="status" className="fine-note">Exploring the project…</p>}
         {error && <p role="alert" className="explain-error">{error}</p>}
         {aiEnabled && <nav className="explain-guide" aria-label="Suggested questions">
           {messages.length > 0 && <button className="explain-explore" type="button" disabled={busy}
@@ -87,14 +89,14 @@ export function ExplainPanel({ topic, aiEnabled }: { topic: ExplanationTopic; ai
             onClick={() => setShowSuggestions(value => !value)}>{showSuggestions ? "Hide suggestions −" : "Keep exploring +"}</button>}
           {messages.length === 0 && showSuggestions && <p className="explain-label">Start here</p>}
           <div id={`${id}-suggestions`} className="explain-suggestions" hidden={!showSuggestions}>
-            {starterQuestions.map(text => <button key={text} type="button" disabled={busy} onClick={() => { setQuestion(text); void ask(text); }}>{text} <span aria-hidden="true">↗</span></button>)}
+            {section.questions.map(text => <button key={text} type="button" disabled={busy} onClick={() => { setQuestion(text); void ask(text); }}>{text} <span aria-hidden="true">↗</span></button>)}
           </div>
         </nav>}
       </div>
       {aiEnabled && <form className="explain-form" onSubmit={submit}>
         <label htmlFor={`${id}-question`}>Or ask your own question</label>
-        <textarea id={`${id}-question`} value={question} onChange={event => setQuestion(event.target.value)} required maxLength={1500} rows={2} placeholder="Ask about projects, skills, or experience…" disabled={busy} />
-        <div><p className="fine-note">AI guide based on this portfolio. Questions are processed by OpenAI.</p>
+        <textarea id={`${id}-question`} value={question} onChange={event => setQuestion(event.target.value)} required maxLength={1500} rows={2} placeholder="Ask about this project’s code or design…" disabled={busy} />
+        <div><p className="fine-note">AI guide to this project. Questions are processed by OpenAI.</p>
           <button type="submit" disabled={busy || !question.trim()}>{busy ? "Thinking…" : "Ask ↗"}</button></div>
       </form>}
     </dialog>

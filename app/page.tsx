@@ -1,3 +1,4 @@
+import { ExplainThis } from "./components/explain-this";
 import Link from "next/link";
 import { Arrow } from "./components/arrow";
 import type { Metadata } from "next";
@@ -140,6 +141,7 @@ export default function Home() {
       </section>
 
       <section id="work" className="section shell work-v2">
+        <ExplainThis topic="portfolio" />
         <div className="section-head">
           <p className="kicker">SELECTED WORK</p>
           <h2>Work that shows how I approach problems.</h2>
