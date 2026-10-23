@@ -1822,3 +1822,51 @@ body:has(.explain-dialog[open]) { overflow: hidden; }
 .explain-code { margin-block: 16px; }
 .explain-code summary { cursor: pointer; color: var(--olive); font-size: 12px; padding-block: 10px; }
 .explain-code pre { max-height: 240px; overflow: auto; padding: 14px; background: var(--card); border: 1px solid var(--line); font: 11px/1.6 monospace; white-space: pre; }
+
+/* A guided Fitch proof: symbols, scope, and explanations. */
+.proof-demo { --proof-p: #5471bb; --proof-q: #977135; --proof-r: #427b65; grid-column: 1 / -1; margin-block: 28px; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--card); }
+[data-theme="dark"] .proof-demo { --proof-p: #a4bdff; --proof-q: #edc47e; --proof-r: #92d5b4; }
+.proof-demo-intro { padding: clamp(22px, 4vw, 36px); border-bottom: 1px solid var(--line); }
+.proof-demo .proof-demo-intro h2 { margin: 0 0 18px; font-size: clamp(25px, 3.7vw, 40px); line-height: 1.12; letter-spacing: -.04em; }
+.proof-demo-intro > p:last-child { max-width: 660px; margin: 0; font-size: 14px; line-height: 1.8; color: var(--muted); }
+.proof-demo-body { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+.proof-board { padding: clamp(16px, 3vw, 28px); background: var(--paper); min-width: 0; }
+.proof-board-heading { display: flex; align-items: center; justify-content: space-between; gap: 14px; font: 11px/1.5 monospace; letter-spacing: .04em; }
+.proof-board-heading b { margin-left: 10px; font-size: 21px; }
+.proof-board-heading button { min-height: 44px; padding: 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: var(--ink); font-size: 11px; cursor: pointer; }
+.proof-key { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 18px 0 24px; font: 11px/1.6 monospace; }
+.proof-atom { font-weight: 700; }
+.proof-atom-p { color: var(--proof-p); }
+.proof-atom-q { color: var(--proof-q); }
+.proof-atom-r { color: var(--proof-r); }
+.proof-operator { color: var(--muted); }
+.proof-lines { list-style: none; padding: 0; margin: 0; min-height: 286px; }
+.proof-lines li { margin: 0; }
+.proof-line { display: grid; grid-template-columns: 18px minmax(0, 1fr) auto; align-items: center; gap: 12px; width: 100%; min-height: 46px; padding: 10px 8px; border: 1px solid transparent; border-radius: 4px; text-align: left; background: transparent; color: var(--ink); cursor: pointer; }
+.proof-line-selected { background: var(--card); border-color: var(--line); }
+.proof-number { font: 11px monospace; color: var(--muted); }
+.proof-expression { font: 20px/1.4 monospace; }
+.proof-english { font: 12px/1.6 Arial, sans-serif; }
+.proof-rule { font: 10px/1.6 monospace; color: var(--muted); }
+.proof-rule-assumption { color: var(--proof-q); }
+.proof-nested { margin-left: 24px !important; border-left: 2px solid var(--proof-q); padding-left: 8px; background: color-mix(in srgb, var(--proof-q) 5%, transparent); }
+.proof-assumption { border-top: 1px solid var(--proof-q); }
+.proof-conclusion { border-top: 1px solid var(--line); margin-top: 10px !important; padding-top: 8px; }
+.proof-demo-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 20px; }
+.proof-demo-actions .button { min-height: 44px; padding: 12px 16px; font-size: 12px; cursor: pointer; }
+.proof-demo-actions > span { font: 11px monospace; color: var(--muted); white-space: nowrap; }
+.proof-explanation { padding: clamp(22px, 3vw, 30px); border-left: 1px solid var(--line); background: color-mix(in srgb, var(--olive) 5%, var(--card)); }
+.proof-explanation-formula { margin: 28px 0 18px; font: 38px/1.2 monospace; }
+.proof-demo .proof-explanation h3 { margin: 0 0 14px; font-size: 23px; line-height: 1.25; letter-spacing: -.025em; }
+.proof-explanation > p:not(.kicker) { font-size: 14px; line-height: 1.85; color: var(--muted); }
+.proof-demo-hint { display: block; margin-top: 28px; font-size: 11px; line-height: 1.7; color: var(--muted); }
+.proof-demo-caption { padding: 18px 24px; margin: 0; border-top: 1px solid var(--line); font-size: 11px; line-height: 1.8; color: var(--muted); }
+.proof-demo button:focus-visible { outline: 2px solid var(--olive); outline-offset: 3px; }
+@media (max-width: 760px) { .proof-demo-body { grid-template-columns: 1fr; } .proof-explanation { border-left: 0; border-top: 1px solid var(--line); } .proof-lines { min-height: 0; } .proof-rule { max-width: 110px; } }
+.code-keyword { color: #7350a5; font-weight: 600; }
+.code-string { color: #427b65; }
+.code-number { color: #956818; }
+.code-comment { color: var(--muted); font-style: italic; }
+[data-theme="dark"] .code-keyword { color: #c4a5f0; }
+[data-theme="dark"] .code-string { color: #92d5b4; }
+[data-theme="dark"] .code-number { color: #edc47e; }

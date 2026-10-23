@@ -1,5 +1,6 @@
 "use client";
 
+import { CodeExcerpt } from "./code-excerpt";
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 import { explanations, type ExplanationTopic } from "../../data/explanations";
 
@@ -71,7 +72,7 @@ export function ExplainPanel({ topic, aiEnabled }: { topic: ExplanationTopic; ai
       </header>
       <div className="explain-conversation" ref={conversation}>
         <div className="explain-summary"><p>{section.summary}</p></div>
-        {code && <details className="explain-code"><summary>View code · {"codeLabel" in section ? section.codeLabel : "Selected excerpt"}</summary><pre><code>{code}</code></pre></details>}
+        {code && <details className="explain-code"><summary>View code · {"codeLabel" in section ? section.codeLabel : "Selected excerpt"}</summary><CodeExcerpt code={code} /></details>}
         <nav className="explain-sources" aria-label="Supporting portfolio sections">
           {section.sources.map(source => <a href={source.href} key={source.href} onClick={() => dialog.current?.close()}>{source.label} ↗</a>)}
         </nav>

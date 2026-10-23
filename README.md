@@ -49,3 +49,7 @@ The upstream README is stale about generator and persistence status. This review
 ### KickboxWM rationale review
 
 Reviewed the supplied 14-page theoretical PDF on 2026-10-23. The user identifies this as a hypothesis-driven personal experiment with straightforward implementation. `data/kickboxwm.ts` summarizes that rationale, distinguishes delayed-recall motor N-back from match detection, and separates protocol proposals from verified implementation and empirical results. The document explicitly describes the combined protocol as not tested in a controlled trial. Its generated citations and predicted biological/cognitive outcomes were not independently validated and are not represented as established findings. The original PDF has not been added to public assets. Project source is still needed to verify specific implementation claims.
+
+### Interactive proof demonstration
+
+The homepage and ProofGym page include a six-line Fitch-style derivation of `P → R` from `P → Q` and `Q → R`. Visitors reveal the assumption, two uses of implication elimination, and implication introduction, select lines for explanations, switch to English, or replay. The example is a guided portfolio demonstration, separate from the full ProofGym engine. Symbols and subproof scope use color and structural labels; curated TypeScript excerpts also have syntax highlighting.

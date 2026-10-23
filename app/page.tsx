@@ -1,3 +1,4 @@
+import { ProofDemo } from "./components/proof-demo";
 import { ExplainThis } from "./components/explain-this";
 import Link from "next/link";
 import { Arrow } from "./components/arrow";
@@ -204,6 +205,7 @@ export default function Home() {
               </p>
             </div>
           </div>
+          <ProofDemo />
           <div className="flow">
             <span>expression</span>
             <i>→</i>
