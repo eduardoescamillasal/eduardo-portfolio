@@ -7,8 +7,8 @@ export const projects = [
   {
     eyebrow: 'LOGIC · MATHEMATICS · STEM',
     title: 'ProofGym',
-    subtitle: 'Logic & STEM Problem-Solving Platform',
-    description: 'An interactive environment for practicing formal reasoning and quantitative problem solving. It includes a Fitch-style proof trainer with step-by-step validation and a broader arena spanning mathematics, physics, chemistry, and logic.',
+    subtitle: 'A Place to Practice Thinking Deeply',
+    description: 'AI can give you an answer in seconds. ProofGym gives you a reason to work through one yourself. Build logical arguments step by step and tackle STEM problems that ask you to question assumptions, connect ideas, and explain why a conclusion follows. The goal is to keep deep, independent thinking in practice.',
     tags: ['React · TypeScript','Formula parser','Proof validation','Zustand'],
     href: 'https://proof-gym.vercel.app/',
     mark: '⊢'
@@ -17,7 +17,7 @@ export const projects = [
     eyebrow: 'COGNITION · SOFTWARE · TRAINING',
     title: 'KickboxWM',
     subtitle: 'Cognitive–Motor Training Experiment',
-    description: 'A personal experiment exploring delayed-recall memory tasks during kickboxing-style intervals. A configurable prototype turns a hypothesis about concurrent cognitive and physical training into something that can be tried and investigated.',
+    description: 'What if a workout challenged your memory as deliberately as your body? KickboxWM pairs kickboxing-style intervals with delayed-recall cues: remember an earlier instruction, resist reacting to the newest one, and keep moving. A personal experiment exploring whether physical and cognitive practice could reinforce each other.',
     tags: ['Hypothesis-driven prototype','Delayed recall','Movement','Experimentation'],
     href: 'https://kickboxer-pfc-optimizer.vercel.app/',
     mark: 'N↟'

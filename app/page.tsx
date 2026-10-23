@@ -153,8 +153,9 @@ export default function Home() {
             <p className="kicker">FORMAL LOGIC · STEM</p>
             <h3>ProofGym</h3>
             <p className="case-lede">
-              A browser-based environment for constructing Fitch-style formal
-              proofs and practicing quantitative STEM problems.
+              AI can give you an answer in seconds. ProofGym gives you a reason
+              to work through one yourself. Practice building arguments and
+              tackling STEM problems where the reasoning matters.
             </p>
             <div className="case-links">
               <Link href="/proofgym">Explore the project <Arrow direction="right" /></Link>
@@ -179,25 +180,27 @@ export default function Home() {
             <div>
               <p className="kicker">THE PROBLEM</p>
               <p>
-                A proof trainer has to evaluate the reasoning process, not only
-                compare a final answer with a stored solution. Steps depend on
-                earlier lines, inference rules and proof scope.
+                When answers are always a prompt away, it becomes easy to skip
+                the effort of understanding. I built ProofGym to make room for
+                that effort: questioning assumptions, following an argument,
+                and deciding whether a conclusion actually holds.
               </p>
             </div>
             <div>
               <p className="kicker">WHAT I BUILT</p>
               <p>
-                Step-by-step proof construction and validation, progressive
-                exercises, custom practice, completion tracking, achievements
-                and a broader STEM problem-solving arena.
+                A formal-logic workspace for building proofs one step at a time,
+                alongside STEM and critical-thinking challenges. Choose an
+                exercise, construct your reasoning, and use feedback to
+                reconsider a step when it does not follow.
               </p>
             </div>
             <div>
               <p className="kicker">WHY IT MATTERS</p>
               <p>
-                It shows the kind of greenfield software I enjoy: an interface
-                sitting on top of rules, state and a problem that cannot be
-                reduced to a static form.
+                The goal is to help people think deeply again. I want AI to be
+                a tool we can question and evaluate, while we keep practicing
+                the reasoning needed to form our own conclusions.
               </p>
             </div>
           </div>
@@ -274,9 +277,10 @@ export default function Home() {
             <p className="kicker">HYPOTHESIS · PROTOTYPE · EXPERIMENT</p>
             <h3>KickboxWM</h3>
             <p className="case-lede">
-              Could recalling an earlier movement cue while exercising create a useful
-              cognitive–motor training task? A personal hypothesis turned into
-              a configurable prototype for exploration.
+              What if a workout challenged your memory as deliberately as your
+              body? Recall an earlier movement cue, resist reacting to the
+              newest one, and keep moving. An experiment in combining
+              physical effort with cognitive practice.
             </p>
             <div className="case-links">
               <Link href="/kickboxwm">Explore the project <Arrow direction="right" /></Link>
