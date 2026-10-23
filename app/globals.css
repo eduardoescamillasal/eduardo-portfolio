@@ -1870,3 +1870,5 @@ body:has(.explain-dialog[open]) { overflow: hidden; }
 [data-theme="dark"] .code-keyword { color: #c4a5f0; }
 [data-theme="dark"] .code-string { color: #92d5b4; }
 [data-theme="dark"] .code-number { color: #edc47e; }
+
+.case-links .project-explore { color: var(--olive); border-bottom-color: var(--olive); }

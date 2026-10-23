@@ -159,7 +159,7 @@ export default function Home() {
               tackling STEM problems where the reasoning matters.
             </p>
             <div className="case-links">
-              <Link href="/proofgym">Explore the project <Arrow direction="right" /></Link>
+              <Link className="project-explore" href="/proofgym">Explore the project <Arrow direction="right" /></Link>
               <a
                 href="https://proof-gym.vercel.app/"
                 target="_blank"
@@ -284,7 +284,7 @@ export default function Home() {
               physical effort with cognitive practice.
             </p>
             <div className="case-links">
-              <Link href="/kickboxwm">Explore the project <Arrow direction="right" /></Link>
+              <Link className="project-explore" href="/kickboxwm">Explore the project <Arrow direction="right" /></Link>
               <a
                 href="https://kickboxer-pfc-optimizer.vercel.app/"
                 target="_blank"
@@ -327,7 +327,7 @@ export default function Home() {
               Short sessions combine adaptive challenges and progress tracking.
             </p>
             <div className="case-links">
-              <Link href="/cognitrain">Explore the project <Arrow direction="right" /></Link>
+              <Link className="project-explore" href="/cognitrain">Explore the project <Arrow direction="right" /></Link>
               <a href="https://cognitrainmx.vercel.app/" target="_blank" rel="noreferrer">Try the current version <Arrow /></a>
             </div>
             <ExplainThis topic="cognitrain" />
