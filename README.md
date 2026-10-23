@@ -52,4 +52,4 @@ Reviewed the supplied 14-page theoretical PDF on 2026-10-23. The user identifies
 
 ### Interactive proof demonstration
 
-The homepage and ProofGym page include a six-line Fitch-style derivation of `P → R` from `P → Q` and `Q → R`. Visitors reveal the assumption, two uses of implication elimination, and implication introduction, select lines for explanations, switch to English, or replay. The example is a guided portfolio demonstration, separate from the full ProofGym engine. Symbols and subproof scope use color and structural labels; curated TypeScript excerpts also have syntax highlighting.
+The ProofGym detail page includes a six-line Fitch-style derivation of `P → R` from `P → Q` and `Q → R`. Visitors reveal the assumption, two uses of implication elimination, and implication introduction, select lines for explanations, switch to English, or replay. The example is a guided portfolio demonstration, separate from the full ProofGym engine. Symbols and subproof scope use color and structural labels; curated TypeScript excerpts also have syntax highlighting.

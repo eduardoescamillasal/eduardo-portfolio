@@ -1,4 +1,3 @@
-import { ProofDemo } from "./components/proof-demo";
 import { ExplainThis } from "./components/explain-this";
 import Link from "next/link";
 import { Arrow } from "./components/arrow";
@@ -181,10 +180,9 @@ export default function Home() {
             <div>
               <p className="kicker">THE PROBLEM</p>
               <p>
-                When answers are always a prompt away, it becomes easy to skip
-                the effort of understanding. I built ProofGym to make room for
-                that effort: questioning assumptions, following an argument,
-                and deciding whether a conclusion actually holds.
+                I wanted a place to practice independent reasoning in an age of
+                instant answers: question assumptions, follow an argument,
+                and understand why a conclusion holds.
               </p>
             </div>
             <div>
@@ -199,13 +197,12 @@ export default function Home() {
             <div>
               <p className="kicker">WHY IT MATTERS</p>
               <p>
-                The goal is to help people think deeply again. I want AI to be
-                a tool we can question and evaluate, while we keep practicing
-                the reasoning needed to form our own conclusions.
+                AI opens up new ways to learn. ProofGym complements those tools
+                with hands-on reasoning practice: time to explore an idea,
+                test an argument, and reach your own conclusion.
               </p>
             </div>
           </div>
-          <ProofDemo />
           <div className="flow">
             <span>expression</span>
             <i>→</i>

@@ -11,7 +11,7 @@ import { shareImage } from "../../lib/site";
 const details = {
   proofgym: {
     index: 0,
-    problem: "AI makes answers easy to obtain. My concern is that we can lose the habit of working through a problem ourselves. ProofGym makes space for that work: examine the assumptions, build an argument, and understand why each step follows.",
+    problem: "I built ProofGym as a place to practice independent reasoning in an age of instant answers. Explore a problem, examine its assumptions, and build an argument you understand one step at a time.",
     decisions: ["Parse formulas into a structured syntax tree before comparing them.", "Separate proof state and validation from the React interface with Zustand.", "Reuse the proof workspace for curated, generated, and custom exercises."],
     focus: "A TypeScript formula parser, rule-specific validation, nested subproof scope, and a procedural exercise generator sit behind the interactive workspace.",
     scope: "A browser-based personal project built with Next.js, React, TypeScript, Zustand, Tailwind CSS, and KaTeX. Progress is saved locally in the browser; accounts and cloud synchronization are not part of the inspected implementation.",
