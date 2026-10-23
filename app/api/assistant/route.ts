@@ -35,5 +35,10 @@ export async function POST(request: Request) {
   record.count += 1;
   requests.set(identity, record);
   try { return NextResponse.json({ answer: await generateAnswer(input.topic, input.messages, key) }, { headers }); }
-  catch { return failure("The assistant couldn’t respond right now. Please try again, or use the explanation and links above.", 502); }
+  catch (error) {
+    console.error("[portfolio-assistant] Request failed", {
+      kind: error instanceof Error && ["TimeoutError", "AbortError", "TypeError"].includes(error.name) ? error.name : "ProviderError",
+    });
+    return failure("The assistant couldn’t respond right now. Please try again, or use the explanation and links above.", 502);
+  }
 }

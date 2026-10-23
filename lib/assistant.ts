@@ -36,7 +36,16 @@ export async function generateAnswer(topic: ExplanationTopic, messages: ChatMess
     }),
     signal: AbortSignal.timeout(20000),
   });
-  if (!response.ok) throw new Error("Assistant provider unavailable");
+  if (!response.ok) {
+    const detail = await response.json().catch(() => null);
+    const knownCodes = new Set(["invalid_api_key", "insufficient_quota", "rate_limit_exceeded", "model_not_found", "permission_denied", "unsupported_parameter", "invalid_value"]);
+    // Log only allowlisted metadata; never credentials, prompts, or provider messages.
+    console.error("[portfolio-assistant] Provider rejected request", {
+      status: response.status,
+      code: knownCodes.has(detail?.error?.code) ? detail.error.code : "unclassified",
+    });
+    throw new Error("Assistant provider unavailable");
+  }
   const data = await response.json();
   const output: string[] = [];
   for (const item of data.output ?? []) {
@@ -46,6 +55,9 @@ export async function generateAnswer(topic: ExplanationTopic, messages: ChatMess
     }
   }
   const answer = output.join("\n").trim();
-  if (!answer || data.status === "incomplete") throw new Error("No complete assistant answer");
+  if (!answer || data.status === "incomplete") {
+    console.error("[portfolio-assistant] No complete answer", { incomplete: data.status === "incomplete", hasText: Boolean(answer) });
+    throw new Error("No complete assistant answer");
+  }
   return answer;
 }

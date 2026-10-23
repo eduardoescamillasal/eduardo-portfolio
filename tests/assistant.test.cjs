@@ -101,3 +101,15 @@ test('KickboxWM context centers the experiment and separates theory from results
   assert.match(context, /not necessarily the conventional N-back match-detection/);
   assert.doesNotMatch(context, /export function isAccessible/);
 });
+
+test('provider diagnostics log status and allowlisted code without secrets or provider text', async () => {
+  const originalError = console.error;
+  const logs = [];
+  console.error = (...args) => logs.push(args);
+  try {
+    global.fetch = async () => Response.json({ error: { code: 'insufficient_quota', message: 'private upstream text test-only-key' } }, { status: 429 });
+    await assert.rejects(generateAnswer('proofgym', valid.messages, 'test-only-key'));
+    assert.match(JSON.stringify(logs), /insufficient_quota/);
+    assert.doesNotMatch(JSON.stringify(logs), /private upstream text|test-only-key/);
+  } finally { console.error = originalError; }
+});
