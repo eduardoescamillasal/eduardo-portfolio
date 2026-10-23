@@ -53,3 +53,7 @@ Reviewed the supplied 14-page theoretical PDF on 2026-10-23. The user identifies
 ### Interactive proof demonstration
 
 The ProofGym detail page includes a six-line Fitch-style derivation of `P → R` from `P → Q` and `Q → R`. Visitors reveal the assumption, two uses of implication elimination, and implication introduction, select lines for explanations, switch to English, or replay. The example is a guided portfolio demonstration, separate from the full ProofGym engine. Symbols and subproof scope use color and structural labels; curated TypeScript excerpts also have syntax highlighting.
+
+## Search metadata
+
+The homepage and project pages render distinct titles/descriptions, canonical URLs, Open Graph and Twitter previews, and JSON-LD in their initial HTML. Project metadata lives in `lib/project-seo.ts`; project pages describe the application and its breadcrumb hierarchy. The homepage profile identifies the person and website using consistent IDs. The sitemap includes all three project routes, unknown project slugs return 404, and robots excludes the chat API. No ratings, clinical results, or unsupported credentials are included in structured data.

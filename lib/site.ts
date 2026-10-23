@@ -1,5 +1,5 @@
 export const siteUrl = "https://eduardoeescamilla.com";
-export const siteDescription = "Eduardo Escamilla, software engineer in Monterrey, Mexico. Explore production web and mobile experience, interactive projects, and work with React, Next.js, React Native, services, and cloud technologies.";
+export const siteDescription = "Eduardo Escamilla, software engineer in Monterrey, Mexico. Explore React, Next.js and React Native work, production experience, and interactive projects.";
 export const shareImage = {
   url: "/share/portfolio.jpg",
   width: 1200,

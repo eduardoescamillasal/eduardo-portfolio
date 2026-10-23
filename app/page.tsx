@@ -25,8 +25,10 @@ export default function Home() {
   return (
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org", "@type": "ProfilePage", url: siteUrl,
-        mainEntity: { "@type": "Person", name: "Eduardo Escamilla", url: siteUrl,
+        "@context": "https://schema.org", "@type": "ProfilePage", "@id": `${siteUrl}/#profile`, url: siteUrl,
+        name: "Eduardo Escamilla | Software Engineer", description: siteDescription,
+        isPartOf: { "@type": "WebSite", "@id": `${siteUrl}/#website`, url: siteUrl, name: "Eduardo Escamilla", inLanguage: "en" },
+        mainEntity: { "@type": "Person", "@id": `${siteUrl}/#person`, name: "Eduardo Escamilla", url: siteUrl,
           image: `${siteUrl}/portrait.jpg`, jobTitle: "Software Engineer",
           sameAs: ["https://github.com/eduardoescamillasal"],
           homeLocation: { "@type": "Place", name: "Monterrey, Mexico" },
