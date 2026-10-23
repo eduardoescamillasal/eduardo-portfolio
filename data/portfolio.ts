@@ -35,7 +35,7 @@ export const projects = [
 
 export const experience = [
   { period:'2025 — now', company:'Q Bridge AI', role:'Full Stack Software Developer / Head of Solutions', text:'Full-stack applications and dashboards with React, Next.js, Node.js, Express, Python, SQL and Supabase. LLM workflow prototypes with n8n, Gemini and Claude. Application deployment and troubleshooting across AWS, Google Cloud, Docker and Vercel.' },
-  { period:'2024', company:'Avant Santé', role:'Full Stack Software Developer', text:'Developed web applications across front end, back end, databases and API integrations using React, Python, Node.js and SQL.' },
+  { period:'2024', company:'Avant Santé', role:'Full Stack Software Developer', text:'Built the company website. Separately developed a backend system with APIs, database integrations and an administration portal using React, Python, Node.js and SQL; this additional system was not deployed.' },
   { period:'2021 — 2024', company:'The Blue People', role:'Full Stack Software Developer', text:'Production React Native mobile applications, React administration tools and serverless systems using AWS and Azure. Work included authentication, real-time messaging, media, geolocation and analytics.' },
   { period:'2018 — 2021', company:'Independent', role:'Software Developer & STEM Tutor', text:'Custom .NET solutions and mentoring in mathematics, physics, programming and mathematical modeling.' },
   { period:'2017 — 2018', company:'Interfactura Grupo GDX', role:'Software Developer', text:'Python/data work, web development, CRUD applications, Linux, Docker and Git.' },

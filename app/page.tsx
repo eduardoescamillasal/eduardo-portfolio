@@ -111,26 +111,29 @@ export default function Home() {
 
       </div>
 
-      <section className="signal-strip">
+      <section className="signal-strip" aria-labelledby="overview-heading">
+        <div className="shell signal-heading">
+          <div><h2 id="overview-heading">Experience at a glance</h2><p>Explore the projects and professional experience behind each area.</p></div>
+        </div>
         <div className="shell signal-grid">
           <div>
             <span>01</span>
-            <b>Greenfield development</b>
+            <b><a href="#work">Greenfield development ↗</a></b>
             <small>Idea or design → production</small>
           </div>
           <div>
             <span>02</span>
-            <b>Production engineering</b>
+            <b><a href="#experience">Production engineering ↗</a></b>
             <small>Web · mobile · backend · cloud</small>
           </div>
           <div>
             <span>03</span>
-            <b>Quantitative background</b>
+            <b><a href="#background">Quantitative background ↗</a></b>
             <small>Mathematics · modeling · ML</small>
           </div>
           <div>
             <span>04</span>
-            <b>Recent AI work</b>
+            <b><a href="#experience">Recent AI work ↗</a></b>
             <small>LLMs · automation · structured outputs</small>
           </div>
         </div>
