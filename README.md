@@ -13,7 +13,7 @@ Next.js portfolio. Run `npm run dev` for development and `npm run build` for the
 
 ## Certificates
 
-Add real credentials to `data/certificates.ts` with title, platform, issuer, credential kind, optional included courses, verification URL, and preview path. Put preview images in `public/certificates/`. The section features four completed DataCamp tracks and selected Coursera credentials. Visitors can browse the collection with search, type/platform filters, and pagination. Certificate details and available previews open in a modal. The collection includes 20 Coursera PDFs, four DataCamp track PDFs, and the existing calculus certificate screenshot. Coursera PDFs have verification links; three earlier University of Pennsylvania entries still need documents and verification links. DataCamp records are track completions, not DataCamp professional certifications.
+Add real credentials to `data/certificates.ts` with title, platform, issuer, credential kind, optional included courses, verification URL, and preview path. Put preview images in `public/certificates/`. The section features four completed DataCamp tracks and selected Coursera credentials. Visitors can browse the collection with search, type/platform filters, and pagination. Certificate details and available previews open in a modal. The collection includes 20 Coursera PDFs, four DataCamp track PDFs, the TsinghuaX/edX Combinatorial Mathematics certificate (issued June 17, 2015), and the existing calculus certificate screenshot. Coursera PDFs have verification links; three earlier University of Pennsylvania entries still need documents and verification links. DataCamp records are track completions, not DataCamp professional certifications.
 
 ## Remaining portfolio checklist
 

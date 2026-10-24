@@ -23,7 +23,7 @@ export function Certificates() {
   return <section id="certificates" className="certificate-section shell">
     <div className="certificate-heading"><h2>Professional Development</h2><span className="fine-note">Completed tracks, specializations & selected courses</span></div>
     <p className="credential-intro">Structured learning in software, data engineering, and machine learning, supported by completed projects and coursework.</p>
-    <p className="credential-summary">4 completed DataCamp tracks · Coursera specializations & courses</p>
+    <p className="credential-summary">4 completed DataCamp tracks · Coursera specializations & courses · edX coursework</p>
     {expanded && <div className="credential-controls">
       <label>Search courses or institutions<input type="search" value={query} onChange={e => { setQuery(e.target.value); setPage(0); }} placeholder="Algorithms, mathematics, Python…" /></label>
       {platforms.length > 1 && <label>Platform<select value={platform} onChange={e => { setPlatform(e.target.value); setPage(0); }}><option>All</option>{platforms.map(p => <option key={p}>{p}</option>)}</select></label>}
@@ -42,6 +42,7 @@ export function Certificates() {
     <dialog ref={dialog} className="credential-dialog" aria-labelledby="credential-title" onClick={e => { if (e.target === e.currentTarget) dialog.current?.close(); }}>
       {selected && <><header><div><p className="kicker">{selected.platform} · {selected.kind}</p><h3 id="credential-title">{selected.title}</h3><p className="fine-note">{selected.issuer}</p></div><button className="credential-close" aria-label="Close certificate" onClick={() => dialog.current?.close()}>×</button></header>
       {selected.preview ? <object className="credential-document" data={selected.preview} aria-label={`${selected.title} certificate preview`}><a href={selected.preview} target="_blank" rel="noreferrer">Open certificate preview <Arrow /></a></object> : <p className="fine-note">Completed coursework. Certificate preview will be added here.</p>}
+      {selected.issuedOn && <p className="fine-note">Issued {selected.issuedOn}</p>}
       {selected.completedOn && <p className="fine-note">Completed {selected.completedOn}{selected.hours ? ` · ${selected.hours} hours` : ""}{selected.honors ? " · With honors" : ""}</p>}
       {selected.courses && <div><h4>Included courses</h4><ul>{selected.courses.map(course => <li key={course}>{course}</li>)}</ul></div>}
       {selected.preview && <p><a className="text-link" href={selected.preview} target="_blank" rel="noreferrer">Open certificate document <Arrow /></a></p>}

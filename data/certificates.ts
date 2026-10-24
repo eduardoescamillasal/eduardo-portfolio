@@ -7,6 +7,7 @@ export type Certificate = {
   url?: string;
   preview?: string;
   completedOn?: string;
+  issuedOn?: string;
   hours?: number;
   honors?: boolean;
   featured?: boolean;
@@ -14,6 +15,15 @@ export type Certificate = {
 
 // Details transcribed from supplied certificates; older screenshot-only entries retained.
 export const certificates: Certificate[] = [
+  {
+    "title": "Combinatorial Mathematics",
+    "platform": "edX",
+    "issuer": "Tsinghua University (TsinghuaX)",
+    "kind": "Course",
+    "issuedOn": "June 17, 2015",
+    "preview": "/certificates/edx-tsinghuax-combinatorial-mathematics.pdf",
+    "url": "https://verify.edx.org/cert/bc00205af0294a008fcb75e0d02e2ee5"
+  },
   {
     "title": "Associate Data Scientist in Python",
     "platform": "DataCamp",
